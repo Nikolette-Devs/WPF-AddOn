@@ -1,0 +1,71 @@
+﻿<Window x:Class="Portfolio_WPF_AddOn.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Portfolio_WPF_AddOn"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <!--"Auto" will go with the width of the text and "*" will make each box the same width-->
+            <ColumnDefinition Width="*"/>
+            <!--"2*" any number before a star will adjust the width also-->
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+
+        <!--Box Numer 1 -->
+        <Button Grid.Column="0" Grid.Row="0" Background="BlueViolet" >Hi
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontSize" Value="50"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <!--Box Numer 2 -->
+        <Button Grid.Column="1" Grid.Row="0" ToolTip="Yes You!" Background="Coral">There!</Button>
+        <!--Box Numer 3 -->
+        <Button Grid.Column="2" Grid.Row="0" Background="Cyan">Do</Button>
+        <!--Box Numer 4 -->
+        <Button Grid.Column="0" Grid.Row="1" Background="DarkKhaki">you</Button>
+        <!--Box Numer 5 -->
+        <Button Grid.Column="1" Grid.Row="1" Background="Fuchsia">enjoy</Button>
+        <!--Box Numer 6 -->
+        <Button Grid.Column="2" Grid.Row="1" Background="Crimson">this</Button>
+        <!--Box Numer 7 -->
+        <Button Grid.Column="0" Grid.Row="2" Background="BlanchedAlmond">grid</Button>
+        <!--Box Numer 8 -->
+        <Button Grid.Column="1" Grid.Row="2" Background="LightGreen">flow?</Button>
+        <StackPanel Grid.Column="1" Margin="10,144,0,0" Grid.RowSpan="2" Grid.Row="1" >
+            <CheckBox x:Name="cbHelloOne" Content="Yes!" Margin="0,80,0,0" HorizontalAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Center" FontSize="15" Margin="0,1,0,0">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Text" Value=""/>
+                        <Setter Property="Foreground" Value="Navy"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChecked, ElementName=cbHelloOne}" Value="True">
+                                <Setter Property="Text" Value="great ... explore more of my work."/>
+                                <Setter Property="Foreground" Value="Navy"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </StackPanel>
+        <!--Box Numer 9 -->
+        <TextBlock Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">Pretty cool huh!</TextBlock>
+    </Grid>
+</Window>
